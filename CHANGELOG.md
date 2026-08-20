@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.2.0 (2026-08-20) — full-lifecycle review gate (family lockstep)
+
+- Gate family core vendored to `lib/gate/` (byte-identical with
+  codex-plugin-cc fork & codex-plugin-pi): verdict contract, budget tiers
+  15m/10m/1m/30s, AA-seeded effort picker, OS-global learner, fail-open
+  timeouts.
+- Companion: `gate plan|follow|completion|learner|status|on|off`.
+- New 9th skill `codex-gate`: three-stage protocol (plan gate → realtime
+  follow with halt-chain on FAIL → completion gate before done/commit);
+  `{{COMPANION}}` substitution by installer.
+- `runAppServerTurn({disableBroker})` — no lazy-broker leaks.
+- Tests: 94 (76 + 18 gate). Learner store shared cross-host.
+
 ## 0.1.0 (2026-08-19)
 
 Initial port of [openai/codex-plugin-cc](https://github.com/openai/codex-plugin-cc)

@@ -29,7 +29,7 @@ test("install copies skills with substituted companion path and is idempotent", 
   assert.equal(first.status, 0, first.stderr);
 
   const names = fs.readdirSync(skillsDir).filter((n) => n.startsWith("codex-"));
-  assert.equal(names.length, 8);
+  assert.equal(names.length, 9);
   for (const name of names) {
     const md = fs.readFileSync(path.join(skillsDir, name, "SKILL.md"), "utf8");
     assert.match(md, new RegExp(`node ".*codex-companion\\.mjs"`), `${name} companion path substituted`);
